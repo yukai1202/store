@@ -1,12 +1,10 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    margin:0;
+    padding:0;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.pure-menu {
+    box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -40,3 +38,55 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+
+.clear {
+    clear:both;
+}
+
+.container{
+    
+}
+
+.store-list {
+    position:relative;
+    padding-left: 130px;
+    padding-bottom:80px;
+    left: 0;
+}
+
+.store-cat {
+    width: 130px;
+    position: fixed;
+    top: 34px;
+    left: 0;
+    bottom: 80px;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.pure-menu-item{
+    background-color:#eee;
+}
+
+.pure-menu-active>.pure-menu-link, .pure-menu-link:hover, .pure-menu-link:focus {
+  background-color: #fff;
+ 
+  border-left:1px solid blue;
+}
+
+.store-pro {
+     
+}
+
+
+
+/*footer*/
+footer{
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    height:80px;
+
+}
+/*end footer*/

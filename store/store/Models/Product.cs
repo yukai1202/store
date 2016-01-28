@@ -15,6 +15,13 @@ namespace store.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int productId { get; set; }
 
+        public Product() 
+        {
+            this.productUID = System.Guid.NewGuid().ToString("N");
+        }
+
+        public string productUID { get; set; }
+
         public int categoryId { get; set; }
         [ForeignKey("categoryId")]
         public virtual Category category { get; set; }

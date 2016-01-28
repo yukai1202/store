@@ -17,27 +17,28 @@
 
 </head>
 <body>
-    <div class="container">
-        <div class="pure-menu pure-menu-horizontal">
-            <a href="#" class="pure-menu-heading">Your Logo</a>
-            @*<ul class="pure-menu-list">
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Home</a></li>
-                <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Pricing</a></li>
-                <li class="pure-menu-item"><a href="#" class="pure-menu-link">Contact</a></li>
-            </ul>*@
-        </div>
+    <div>
+        <header class="store-header">
+            <a class="header-back">
+                <span class="icon-arrow-left"></span>
+            </a>
+            <div class="header-title flex" ng-show="restaurant.name">
+                <span class="header-rst-name ng-binding" itemprop="name" ng-bind="restaurant.name">
+                    Super Market
+                </span>
+            </div>
+        </header>
 
         <div>
             @RenderBody()
         </div>
 
-        
- 
-        <footer>
-            <p>&copy; @DateTime.Now.Year - 我的 ASP.NET 应用程序</p>
-        </footer>
+        <footer></footer>
     </div>
+
+
     @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/app")
     @*@Scripts.Render("~/bundles/bootstrap")*@
     @RenderSection("scripts", required: false)
 </body>

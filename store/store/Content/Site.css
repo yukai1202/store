@@ -1,92 +1,189 @@
-﻿body {
+﻿html {
+	-ms-touch-action: none;
+}
+
+body {
     margin:0;
     padding:0;
+    font-size: 14px;
+    color: #666;
 }
-
-.pure-menu {
-    box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
+body,ul,li {
+	padding: 0;
+	margin: 0;
+	border: 0;
 }
-
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
-
-/* styles for validation helpers */
-.field-validation-error {
-    color: #b94a48;
-}
-
-.field-validation-valid {
-    display: none;
-}
-
-input.input-validation-error {
-    border: 1px solid #b94a48;
-}
-
-input[type="checkbox"].input-validation-error {
-    border: 0 none;
-}
-
-.validation-summary-errors {
-    color: #b94a48;
-}
-
-.validation-summary-valid {
-    display: none;
-}
-
 .clear {
     clear:both;
 }
 
-.container{
-    
+/*header*/
+.store-header{
+    position: relative;
+    top:0px;
+    height: 44px;
+    background: #3199e8;
+    color: #fff;
+    line-height: 44px;
 }
-
-.store-list {
-    position:relative;
-    padding-left: 130px;
-    padding-bottom:80px;
-    left: 0;
+.header-back{
+        position: relative;
+        padding: 0 0 0 10px;
+        color: #fff;
+        display: block;
 }
-
-.store-cat {
-    width: 130px;
-    position: fixed;
-    top: 34px;
-    left: 0;
-    bottom: 80px;
-    z-index: 1000;
-    overflow-y: auto;
+.header-title.flex {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
 }
-
-.pure-menu-item{
-    background-color:#eee;
+.header-title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 65px;
+    right: 65px;
+    overflow: hidden;
+    margin: 0;
+    text-align: center;
+    font-size: 1.05rem;
+    color: #fff;
 }
+/*end header*/
 
-.pure-menu-active>.pure-menu-link, .pure-menu-link:hover, .pure-menu-link:focus {
-  background-color: #fff;
+.store-content{
  
-  border-left:1px solid blue;
 }
 
-.store-pro {
-     
+/*left*/
+
+.store-menu{
+    position: absolute;
+	z-index: 1;
+	top: 45px;
+	bottom: 48px;
+	left: 0;
+	width: 25%;
+	overflow: hidden;
+    background: #f7f7f7;
+}
+
+.store-tc{
+    -webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	-o-text-size-adjust: none;
+	text-size-adjust: none;
+}
+ 
+.menu-items-wrapper{
+    position: absolute;
+	z-index: 1;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	width: 100%;
+	-webkit-transform: translateZ(0);
+	-moz-transform: translateZ(0);
+	-ms-transform: translateZ(0);
+	-o-transform: translateZ(0);
+	transform: translateZ(0); 
+}
+
+.menu-items-bord{
+    border-right: 1px solid #ddd;
+}
+.menu-items-wrapper .menu-items{
+    list-style-type:none;
+    padding:0px;
+    margin: 0;
+	width: 100%;
+	text-align: left;
+}
+
+ul.menu-items li{
+    border-bottom: 1px solid #ddd;
+    padding: 15px 5px;
+    display: block;
+}
+
+.menu-item-active{
+    margin-right: -1px;
+    background: #fff;
+    border-right-color: #fff;
+    border-left: 2px solid #3199e8;
+}
+/*end left*/
+
+/*right*/
+.store-products{
+    position: absolute;
+	z-index: 1;
+	top: 45px;
+	bottom: 48px;
+	left: 25%;
+	width: 75%;
+	overflow: hidden;
+}
+
+.store-product-wrapper:nth-of-type(1) {
+    border-top: none;
+}
+
+.store-product-wrapper{
+    padding: 10px 8px;
+    background: #fff;
+    border-top: 1px solid #eee;
+}
+
+.store-product-content{
+    overflow: hidden;
+    padding-left: 7px;
+}
+.store-product-content .product-name{
+    line-height:15px;
+    font-size:15px;
+    color:#333;
+}
+
+.product-name{
+    position:relative;
+    top:-6px;
+}
+.product-price{
+    color: #ff6000;
+    font-size: 18px;
+}
+
+.product-footer img{
+    width:36px;
+    height:36px;
+    float:right;
+    position:relative;
+    top:-10px;
 }
 
 
+/*end right*/
 
 /*footer*/
-footer{
-    position:fixed;
-    bottom:0px;
-    left:0px;
-    right:0px;
-    height:80px;
-
+footer {
+	position: absolute;
+	z-index: 2;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 48px;
+	background: #444;
+	padding: 0;
+	border-top: 1px solid #444;
 }
 /*end footer*/
+
+ 

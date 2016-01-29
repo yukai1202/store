@@ -161,12 +161,30 @@ ul.menu-items li{
     font-size: 18px;
 }
 
-.product-footer img{
+
+.product-footer button{
+    background: url("img/rkoer93r3r_small.png") no-repeat;
+    cursor:pointer;
+    border:none;
     width:36px;
     height:36px;
     float:right;
     position:relative;
     top:-10px;
+}
+
+.product-footer button:focus{
+    outline: 0 !important;
+}
+
+#animate-dot{
+  position:absolute;
+  right:0;
+  top:0;
+  display:none;
+  width: 12px;
+  height:12px;
+  z-index:20;
 }
 
 
@@ -183,6 +201,39 @@ footer {
 	background: #444;
 	padding: 0;
 	border-top: 1px solid #444;
+    font-size:1.2rem;
+    color:#fff;
+}
+.cart-wrapper{
+    position: relative;
+    top: 6px;
+    padding-left:20px;
+    display:inline;
+}
+
+.prod-quantity{
+    line-height:48px;
+}
+.prod-quantity:after{
+    content: "份";
+    margin: 0 0 0 .1em;
+}
+
+.prod-cost{
+    margin-left:8px;
+}
+.prod-cost:before{
+    content:'￥';
+}
+
+ .button-select {
+    background: rgb(66, 184, 221);
+    font-size: 70%;
+    float:right;
+    color:#fff;
+    position:relative;
+    top:10px;
+    right:10px;
 }
 /*end footer*/
 

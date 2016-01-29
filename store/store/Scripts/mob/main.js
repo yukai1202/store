@@ -19,6 +19,7 @@ require.config({
 		}
 	},
 	paths: {
+	    jquery: '../jquery-1.10.2',
 		underscore: 'lib/underscore',
 		backbone: 'lib/backbone/backbone',
 		backboneLocalstorage: 'lib/backbone/backbone.localStorage',

@@ -34,8 +34,9 @@
         </div>
     </div>
 
-    <script data-main='@Url.Content("~/Scripts/mob/main")' src='@Url.Content("~/Scripts/mob/lib/require/require.js")'></script>
-    @*@Scripts.Render("~/bundles/require")*@
+     
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/app")
     @*@Scripts.Render("~/bundles/bootstrap")*@
     @RenderSection("scripts", required: false)
 </body>

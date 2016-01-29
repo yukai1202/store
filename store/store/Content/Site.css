@@ -161,6 +161,9 @@ ul.menu-items li{
     font-size: 18px;
 }
 
+.product-price:before{
+    content:"￥";
+}
 
 .product-footer button{
     background: url("img/rkoer93r3r_small.png") no-repeat;

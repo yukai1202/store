@@ -175,9 +175,14 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Common\CacheHelper.cs" />
+    <Compile Include="Common\Constant.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MobileController.cs" />
+    <Compile Include="DAL\CategoryRepository.cs" />
+    <Compile Include="DAL\GenericRepository.cs" />
+    <Compile Include="DAL\UnitOfWork.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -216,6 +221,10 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\mob\app.js" />
+    <Content Include="Scripts\mob\controller\home.js" />
+    <Content Include="Scripts\mob\lib\angular-route.js" />
+    <Content Include="Scripts\mob\lib\angular.js" />
+    <Content Include="Scripts\mob\views\home.html" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -250,9 +259,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Scripts\mob\lib\" />
-    <Folder Include="Scripts\mob\routers\" />
-    <Folder Include="Scripts\mob\views\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

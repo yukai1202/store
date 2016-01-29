@@ -3,15 +3,37 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using store.Common;
+using store.DAL;
+using store.Models;
 
 namespace store.Controllers
 {
     public class MobileController : Controller
     {
+        log4net.ILog log = log4net.LogManager.GetLogger(typeof(MobileController));
+
+        private UnitOfWork unitOfWork = new UnitOfWork();
         //
         // GET: /Mobile/
         public ActionResult Index()
         {
+            var categoryCache = CacheHelper.GetCacheList<IEnumerable<Category>>(Constant.CATEGORY_CACHE);
+            if (categoryCache != null)
+            {
+
+            }
+            else
+            {
+                var result = unitOfWork.CategoryRepository.GetAllCategory().ToList();
+
+                CacheHelper.Put<IEnumerable<Category>>(Constant.CATEGORY_CACHE, result);
+
+                var test = CacheHelper.GetCacheList<Category>(Constant.CATEGORY_CACHE);
+            }
+
+
+            
             return View();
         }
 

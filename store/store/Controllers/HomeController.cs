@@ -20,6 +20,7 @@ namespace store.Controllers
 
             try
             {
+                 
                 using (StoreDB db = new StoreDB())
                 {
                    var result = db.Products.Select(s => s.productId == 1);

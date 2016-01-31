@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Newtonsoft.Json;
 using store.Common;
 using store.DAL;
 using store.Models;
@@ -18,24 +19,39 @@ namespace store.Controllers
         // GET: /Mobile/
         public ActionResult Index()
         {
-            var categoryCache = CacheHelper.GetCacheList<IEnumerable<Category>>(Constant.CATEGORY_CACHE);
-            if (categoryCache != null)
+            return View();
+        }
+
+
+        public JsonResult GetHomeData()
+        {
+            List<CategoryDTO> categories = null;
+            var categoryFromCache = CacheHelper.GetCacheList<IEnumerable<Category>>(Constant.CATEGORY_CACHE);
+            if (categoryFromCache != null)
             {
 
+                categories = categoryFromCache as List<CategoryDTO>;
             }
             else
             {
                 var result = unitOfWork.CategoryRepository.GetAllCategory().ToList();
-
-                CacheHelper.Put<IEnumerable<Category>>(Constant.CATEGORY_CACHE, result);
-
-                var test = CacheHelper.GetCacheList<Category>(Constant.CATEGORY_CACHE);
+                CacheHelper.Put<List<CategoryDTO>>(Constant.CATEGORY_CACHE, result);
+                categories = result;
             }
 
+            List<ProductDTO> list = unitOfWork.CategoryRepository.GetAllProduct().ToList();
 
             
-            return View();
+
+            //HomeData data = new HomeData();
+            //data.categories = categories;
+            //data.products = list;
+
+           // string Str = JsonConvert.SerializeObject(list);
+            return Json(new { categories = categories, products = list, test = "\u5EB7\u5E08\u5085\u77FF\u6CC9\u6C34" }, "application/json", JsonRequestBehavior.AllowGet);
         }
+
+
 
         //
         // GET: /Mobile/Details/5

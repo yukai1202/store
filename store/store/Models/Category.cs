@@ -14,6 +14,8 @@ namespace store.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int categoryId { get; set; }
 
+        [Column(TypeName = "NVARCHAR")]
+        [StringLength(50)]
         public string categoryName { get; set; }
 
         public string remark { get; set; }

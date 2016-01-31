@@ -38,22 +38,27 @@ namespace store
         {
             protected override void Seed(StoreDB context)
             {
-                var category = new Category()
-                {
-                    categoryName = "饮料",
-                    remark = "test"
-                };
+                string[] array = "饮料,水果,休闲零食,面包,乳制品,速冻食品,方便面,酒,香烟,油,米面,蛋肉".Split(',');
 
-                context.Categories.Add(category);
+                foreach (var str in array)
+                {
+                    var category = new Category()
+                    {
+                        categoryName = str,
+                        remark = "test"
+                    };
+
+                    context.Categories.Add(category);
+                }
                 //context.SaveChanges();
 
                 var product = new Product()
                 {
-                    category = category,
+                    categoryId = 1,
                     productName = "康师傅矿泉水",
                     DateCreated = DateTime.Now,
                     price = 12.7m,
-                    description = "康师傅矿泉水，好好和",
+                    description = "%u5EB7%u5E08%u5085%u77FF%u6CC9%u6C34%uFF0C%u597D%u597D%u548C",
                     total = 109,
                     image = "aaa.jpg"
                 };

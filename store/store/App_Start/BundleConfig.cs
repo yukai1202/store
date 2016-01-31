@@ -11,12 +11,16 @@ namespace store
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/mob/lib/angular.js",
-                        "~/Scripts/mob/lib/angular-route.js"
+                        "~/Scripts/mob/lib/angular-route.js",
+                         "~/Scripts/mob/lib/angular-resource.js",
+                        "~/Scripts/mob/lib/lib.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                         "~/Scripts/mob/app.js",
-                        "~/Scripts/mob/controller/home.js"
+                        "~/Scripts/mob/controller/home.js",
+                        "~/Scripts/mob/service/service.js",
+                        "~/Scripts/mob/directive/scrollDirective.js"
                         ));
             //bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
             //            "~/Scripts/jquery.validate*"));
@@ -37,7 +41,7 @@ namespace store
             //bundles.Add(new StyleBundle("~/Content/css").Include(
             //          "~/Content/bootstrap.css",
             //          "~/Content/site.css"));
-            BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = false;
         }
     }
 }

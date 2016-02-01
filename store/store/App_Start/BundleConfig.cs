@@ -13,7 +13,9 @@ namespace store
                         "~/Scripts/mob/lib/angular.js",
                         "~/Scripts/mob/lib/angular-route.js",
                          "~/Scripts/mob/lib/angular-resource.js",
-                        "~/Scripts/mob/lib/lib.js"
+                         "~/Scripts/mob/lib/ng-device-detector.js",
+                        "~/Scripts/mob/lib/lib.js",
+                        "~/Scripts/mob/models/model.js"
                         ));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(

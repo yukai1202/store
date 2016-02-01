@@ -179,6 +179,19 @@ ul.menu-items li{
 .product-footer button:focus{
     outline: 0 !important;
 }
+/*
+.animate-dot {
+    -webkit-transform: translate(0,0);
+	-moz-transform: rotate(20deg); 
+	-o-transform: rotate(20deg);
+	transform: rotate(20deg); 
+	-webkit-transition: -webkit-transform .3s ease-in; 
+	-moz-transition: -moz-transform .3s ease-in; 
+	-o-transition: -o-transform .3s ease-in;
+	transition: transform .3s ease-in; 
+    
+}*/
+
 
 #animate-dot{
   position:absolute;

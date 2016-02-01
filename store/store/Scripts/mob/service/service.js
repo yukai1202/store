@@ -17,4 +17,20 @@ angular.module('storeApp').factory('storeService', ['$timeout', '$q', '$resource
 	    };
 
 	}
-]);
+])
+.factory("CacheData", ["$q", function ($q) {
+    var data = {
+        products: {}
+    };
+
+    return {
+        getProducts: function () {
+            return data.products;
+        },
+        setProducts: function (products) {
+            data.products = products;
+        }
+    };
+
+}]);
+;

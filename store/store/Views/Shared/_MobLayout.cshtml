@@ -1,9 +1,12 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="storeApp">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -11,30 +14,21 @@
     <!--[if lte IE 8]>
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
     <![endif]-->
-    <!--[if gt IE 8]> 
+    <!--[if gt IE 8]>
         <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
     <!--<![endif]-->
 
 </head>
 <body>
     <div>
-        <header class="store-header">
-            <a class="header-back">
-                <span class="icon-arrow-left"></span>
-            </a>
-            <div class="header-title flex" ng-show="restaurant.name">
-                <span class="header-rst-name ng-binding" itemprop="name" ng-bind="restaurant.name">
-                    Super Market1
-                </span>
-            </div>
-        </header>
+        <div ui-view="navbar"></div>
 
-        <div ng-app="storeApp">
+        <div>
             @RenderBody()
         </div>
     </div>
 
-     
+
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/app")
     @*@Scripts.Render("~/bundles/bootstrap")*@

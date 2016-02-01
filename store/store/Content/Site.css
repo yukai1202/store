@@ -28,9 +28,13 @@ body,ul,li {
 }
 .header-back{
         position: relative;
-        padding: 0 0 0 10px;
+        padding: 3px 0 0 10px;
         color: #fff;
         display: block;
+}
+
+.header-back i{
+    font-size: 1.4em;
 }
 .header-title.flex {
     -webkit-box-pack: center;
@@ -205,6 +209,52 @@ ul.menu-items li{
 
 
 /*end right*/
+
+
+/*order*/
+.order-wrapper{
+    padding: 10px 0 0 0;
+    background-color:#ddd;
+}
+.order-header{
+    background-color:#fff;
+    padding:10px 10px;
+}
+
+.order-header a.pure-button{
+    background-color:#3199e8;
+}
+.order-header span{
+    display:inline-block;width:70%;
+}
+
+@media screen and (min-width: 480px) {
+  .order-header span {
+        display:inline-block;width:80%;
+    }
+}
+
+.order-products-wrapper{
+    margin-top:5px;
+    background-color:#fff;
+    padding-top:2px;
+    
+}
+
+.order-product-item{
+    margin:10px 0;
+    height:80px;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-product-count{
+    float:right;
+    margin-right:10px;
+}
+ 
+
+/*end order*/
+
 
 /*footer*/
 footer {

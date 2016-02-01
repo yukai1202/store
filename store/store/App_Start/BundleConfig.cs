@@ -11,7 +11,7 @@ namespace store
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/mob/lib/angular.js",
-                        "~/Scripts/mob/lib/angular-route.js",
+                        "~/Scripts/mob/lib/angular-ui-router.js",
                          "~/Scripts/mob/lib/angular-resource.js",
                          "~/Scripts/mob/lib/ng-device-detector.js",
                         "~/Scripts/mob/lib/lib.js",
@@ -20,7 +20,9 @@ namespace store
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                         "~/Scripts/mob/app.js",
+                        "~/Scripts/mob/controller/nav.js",
                         "~/Scripts/mob/controller/home.js",
+                         "~/Scripts/mob/controller/order.js",
                         "~/Scripts/mob/service/service.js",
                         "~/Scripts/mob/directive/scrollDirective.js"
                         ));
@@ -33,6 +35,7 @@ namespace store
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
+                      "~/Content/font-awesome.css",
                       "~/Content/pure.css",
                       "~/Content/site.css"));
 

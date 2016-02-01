@@ -1,7 +1,7 @@
 ﻿'use strict';
 
-angular.module('storeApp').controller('homeCtrl', ['$scope', '$location', '$timeout', 'storeService', 'getHomeData',
-	function ($scope, $location, $timeout, storeService, getHomeData) {
+angular.module('storeApp').controller('homeCtrl', ['$scope', '$location', '$timeout', 'storeService', 'getHomeData', 'CacheData',
+	function ($scope, $location, $timeout, storeService, getHomeData, CacheData) {
 
 	    var cart = new ShoppingCart();
 	    var data = getHomeData.getData();
@@ -18,6 +18,9 @@ angular.module('storeApp').controller('homeCtrl', ['$scope', '$location', '$time
 
 	    $scope.selecDone = function () {
 	        //alert("selected done");
+	        localStorage.setItem("order_list", JSON.stringify(cart));
+	        CacheData.setProducts(cart);
+	        $location.path("/order");
 	    };
 
 	    $scope.addProduct = function (prod, $event) {
@@ -55,6 +58,17 @@ angular.module('storeApp').controller('homeCtrl', ['$scope', '$location', '$time
 
 	            cart.addProduct(new Product(Math.floor(Math.random() * 10), "test title", 12.9));
 	        });
+
+	    };
+ 
+	    $scope.init = function () {
+	        if (localStorage.getItem("order_list")) {
+	            var list = localStorage.getItem("order_list");
+	            var obj = JSON.parse(list);
+	            cart.products = obj.Product;
+	            cart.totalQuantity = obj.totalQuantity;
+	            cart.totalCost = obj.totalCost;
+	        }
 
 	    };
 	}

@@ -12,7 +12,7 @@ angular.module('storeApp').directive('scrollCarousel', function ($timeout, $comp
             document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
             
             $timeout(function () {
-                scope.scrollMenu = new IScroll('#wrapper-menu', { useTransition: false });
+                scope.scrollMenu = new IScroll('#wrapper-menu', { useTransition: false, click: true });
             });
             
         }

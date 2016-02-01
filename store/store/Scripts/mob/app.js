@@ -19,16 +19,16 @@
                 controller: 'homeCtrl',
                 resolve: {
                     getHomeData: function ($q, $timeout, storeService) {
-                        var test = $q.defer();
+                        var delay = $q.defer();
 
                         storeService.getHomeData().then(function (response) {
-                            test.resolve({
+                            delay.resolve({
                                 getData: function () {
                                     return response;
                                 }
                             });
                         });
-                        return test.promise;
+                        return delay.promise;
                     }
                     
                 }

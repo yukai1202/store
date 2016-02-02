@@ -111,7 +111,34 @@
                         controller: 'resultCtrl'
                     }
                 }
-            });
+            }).
+            state('login', {
+                url: '/login',
+                views: {
+                    'navbar': {
+                        templateUrl: '/Scripts/mob/views/nav.html',
+                        controller: 'navCtrl'
+                    },
+                    'content': {
+                        templateUrl: '/Scripts/mob/views/login.html',
+                        controller: 'loginCtrl'
+                    }
+                }
+            }).
+          state('register', {
+              url: '/register',
+              views: {
+                  'navbar': {
+                      templateUrl: '/Scripts/mob/views/nav.html',
+                      controller: 'navCtrl'
+                  },
+                  'content': {
+                      templateUrl: '/Scripts/mob/views/register.html',
+                      controller: 'registerCtrl'
+                  }
+              }
+          });
+          
           
 
       }]);

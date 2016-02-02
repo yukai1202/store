@@ -27,6 +27,8 @@ namespace store
                         "~/Scripts/mob/controller/selectadd.js",
                         "~/Scripts/mob/controller/newadd.js",
                         "~/Scripts/mob/controller/result.js",
+                        "~/Scripts/mob/controller/login.js",
+                        "~/Scripts/mob/controller/register.js",
 
                         "~/Scripts/mob/service/service.js",
                         "~/Scripts/mob/directive/scrollDirective.js",

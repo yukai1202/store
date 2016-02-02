@@ -23,6 +23,9 @@ namespace store.Models
 
         public string phoneNumber { get; set; }
 
+        //[MinLength(6)]
+        //public string password { get; set; }
+
 
 
 

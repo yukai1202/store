@@ -25,8 +25,8 @@ angular.module('storeApp').controller('navCtrl', ['$scope', '$location', '$timeo
                 href: "/result",
                 name: "result",
                 title: "预订成功",
-                titlecenter: true,
                 back: "home",
+                titlecenter: true,
                 backText:'返回'
             },
             {
@@ -40,6 +40,22 @@ angular.module('storeApp').controller('navCtrl', ['$scope', '$location', '$timeo
                 name: "newadd",
                 title: "新建地址",
                 back: "selectadd"
+            },
+            {
+                href: "/login",
+                name: "login",
+                title: "登陆",
+                back: "home",
+                titlecenter: true,
+                backText: '返回'
+            },
+            {
+                href: "/register",
+                name: "register",
+                title: "注册",
+                back: "login",
+                titlecenter: true,
+                backText: '返回'
             }
 	    ];
 

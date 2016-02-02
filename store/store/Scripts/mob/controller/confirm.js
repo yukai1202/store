@@ -6,6 +6,10 @@ angular.module('storeApp').controller('confirmCtrl', ['$scope', '$state', '$time
 	    $scope.createAdd = function () {
 	        $location.path('/selectadd');
 	    };
+
+	    $scope.confirmDone = function () {
+	        $location.path('/result');
+	    };
 	   
 	}
 ]);

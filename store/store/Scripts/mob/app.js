@@ -98,7 +98,21 @@
                         controller: 'newaddCtrl'
                     }
                 }
+            }).
+            state('result', {
+                url: '/result',
+                views: {
+                    'navbar': {
+                        templateUrl: '/Scripts/mob/views/nav.html',
+                        controller: 'navCtrl'
+                    },
+                    'content': {
+                        templateUrl: '/Scripts/mob/views/result.html',
+                        controller: 'resultCtrl'
+                    }
+                }
             });
+          
 
       }]);
 

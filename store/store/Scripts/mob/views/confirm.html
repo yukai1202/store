@@ -16,7 +16,7 @@
      <br/>
      <section class="add-wrapper pay-title">
          <div class="pay-title-lne">
-             <span style="font-size: 1.15em;">支付方式</span>
+             <span style="font-size: 1.15em;">支付方式</span> (目前只支持货到付款)
          </div>
          <br/>
          <div class="pay-title-2 pay-title-lne">
@@ -55,8 +55,25 @@
 
      <br />
      <section class="add-wrapper">
-         <div class="pay-title-2 pay-title-lne">
-             <span>订单总额</span>
+         <div class="pay-title-2 pay-title-lne item-list">
+             <span class="ten">订单总额</span>
+             <span class="money quant">x1</span>
+             <div class="money">
+                 <span>￥42</span>
+             </div>
+         </div>
+
+         <div class="pay-title-2 pay-title-lne item-list">
+             <span class="money ten">订单总额</span>
+             <span class="money quant">x2</span>
+             <div class="money">
+                 <span>￥42</span>
+             </div>
+         </div>
+
+         <div class="pay-title-2 pay-title-lne item-list">
+             <span class="money ten">订单总额</span>
+             <span class="money quant">x3</span>
              <div class="money">
                  <span>￥42</span>
              </div>
@@ -64,3 +81,8 @@
      </section>
 
 </div>
+
+<footer> 
+    <span class="prod-cost order-total-cost">129.00</span> 
+    <button class="button-select pure-button" ng-click="confirmDone()">确认下单</button>
+</footer>

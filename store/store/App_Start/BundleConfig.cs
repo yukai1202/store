@@ -22,9 +22,15 @@ namespace store
                         "~/Scripts/mob/app.js",
                         "~/Scripts/mob/controller/nav.js",
                         "~/Scripts/mob/controller/home.js",
-                         "~/Scripts/mob/controller/order.js",
+                        "~/Scripts/mob/controller/order.js",
+                        "~/Scripts/mob/controller/confirm.js",
+                        "~/Scripts/mob/controller/selectadd.js",
+                        "~/Scripts/mob/controller/newadd.js",
+                        "~/Scripts/mob/controller/result.js",
+
                         "~/Scripts/mob/service/service.js",
-                        "~/Scripts/mob/directive/scrollDirective.js"
+                        "~/Scripts/mob/directive/scrollDirective.js",
+                        "~/Scripts/mob/directive/resizeheightDirective.js"
                         ));
             //bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
             //            "~/Scripts/jquery.validate*"));

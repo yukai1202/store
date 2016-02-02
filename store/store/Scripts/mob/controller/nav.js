@@ -25,7 +25,9 @@ angular.module('storeApp').controller('navCtrl', ['$scope', '$location', '$timeo
                 href: "/result",
                 name: "result",
                 title: "预订成功",
-                back: ""
+                titlecenter: true,
+                back: "home",
+                backText:'返回'
             },
             {
                 href: "/selectadd",

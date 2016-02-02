@@ -1,10 +1,9 @@
 ﻿ <header class="store-header">
-     <a class="header-back" ng-hide="showBackBtn" ng-click="goBack()">
+     <a class="header-back" ng-hide="currentTitle.back.length<=0" ui-sref="{{currentTitle.back || '#'}}">
          <i class="fa fa-chevron-left"></i>
      </a>
-    <div class="header-title flex">
-        <span class="header-rst-name">
-            Super Market1
-        </span>
-    </div>
+     <div class="header-title flex" ng-class="{'header-title-left': currentTitle.back.length>0}">
+         <span class="header-rst-name" ng-bind="currentTitle.title">
+         </span>
+     </div>
 </header>

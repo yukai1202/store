@@ -9,8 +9,8 @@ angular.module('storeApp').directive('scrollCarousel', function ($timeout, $comp
         },
         link: function (scope, element, attr) {
              
-            document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
-            
+            document.getElementsByClassName("store-content")[0].addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
             $timeout(function () {
                 scope.scrollMenu = new IScroll('#wrapper-menu', { useTransition: false, click: true });
             });

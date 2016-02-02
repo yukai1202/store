@@ -1,11 +1,11 @@
 ﻿'use strict';
 
-angular.module('storeApp').controller('orderCtrl', ['$scope', '$state', '$timeout', 'storeService', 'CacheData',
-	function ($scope, $state, $timeout, storeService, CacheData) {
+angular.module('storeApp').controller('orderCtrl', ['$scope', '$state', '$timeout', 'storeService', 'CacheData', '$location',
+	function ($scope, $state, $timeout, storeService, CacheData, $location) {
 
-	    $scope.confirmOrder = function () {
+	    $scope.confirmProduct = function () {
 
-
+	        $location.path("/confirm");
 	    };
 
 	    $scope.popupTimepicker = function () {

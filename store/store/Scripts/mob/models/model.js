@@ -41,14 +41,16 @@ ShoppingCart.prototype.isProductSelected = function (prod) {
 };
 
 ShoppingCart.prototype.updateTotalQuantityAndCost = function () {
-    var totalCost = 0.00, totalQuantity = 0;
+    var that = this, _cost = 0, _quatity = 0;
     $.each(this.products, function (index, obj) {
-        totalCost += obj.quantity * obj.price;
-        totalQuantity += obj.quantity;
+        _cost += obj.quantity * obj.price;
+        _quatity += obj.quantity;
     });
-
-    $(".prod-quantity").text(totalQuantity);
-    $(".prod-cost").text(totalCost.toFixed(2));
+     
+    that.totalCost = _cost;
+    that.totalQuantity = _quatity;
+    $(".prod-quantity").text(_quatity);
+    $(".prod-cost").text(_cost.toFixed(2));
 };
 
 ShoppingCart.prototype.updateTotalCost = function () {

@@ -6,7 +6,6 @@ angular.module('storeApp').controller('homeCtrl', ['$scope', '$location', '$time
 	    var cart = new ShoppingCart();
 	    var data = getHomeData.getData();
 	    $scope.categories = data.categories;
-	    $scope.products = data.products;
 
 	    $scope.menuScroll = Object.create(null);
 
@@ -62,14 +61,23 @@ angular.module('storeApp').controller('homeCtrl', ['$scope', '$location', '$time
 	    };
  
 	    $scope.init = function () {
+	        $scope.products = data.products;
 	        if (localStorage.getItem("order_list")) {
 	            var list = localStorage.getItem("order_list");
 	            var obj = JSON.parse(list);
-	            cart.products = obj.Product;
+	            cart.products = obj.products;
 	            cart.totalQuantity = obj.totalQuantity;
 	            cart.totalCost = obj.totalCost;
+
+	            $(".prod-quantity").text(cart.totalQuantity);
+	            $(".prod-cost").text(cart.totalCost.toFixed(2));
+	        } else {
+	            
+	            
 	        }
 
 	    };
+
+	    $scope.init();
 	}
 ]);

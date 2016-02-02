@@ -1,13 +1,13 @@
-﻿ <section class="order-wrapper">
+﻿ <div class="order-wrapper">
      <section class="order-header">
          <span>指定送货时间</span>  
          
-         <div style="display:inline-block;width:85px;text-align:right;">
-             <a class="pure-button pure-button-primary" ng-click="popupTimepicker">点击选择</a>
+         <div style="position:absolute;width:85px;padding:0 10px;right:10px; display:inline">
+             <a class="pure-button pure-button-primary" ng-click="popupTimepicker()">点击选择</a>
          </div>
      </section>
 
-     <section class="order-products-wrapper">
+     <div class="order-products-wrapper">
          <div class="order-product-item" ng-repeat="prod in products"> 
              <img width="70" height="70" style="opacity: 1; transition: opacity 0.5s;float:left;margin-left:10px;"> 
              <div class="store-product-content"> <p class="product-name ng-binding">康师傅矿泉水</p>
@@ -27,7 +27,19 @@
              </div> 
          </div>
 
-     </section>
-</section>
+         <div class="order-mark-wrapper">
+             <span style="width:40px; vertical-align:top;">备注</span>
+             <div class="order-box-outer">
+                 <textarea placeholder="选填,告诉我们您的特殊要求！"></textarea>
+             </div>
+         </div>
+     </div>
+</div>
 
- 
+ <footer style="position: fixed; background-color: #ddd; border-top: 1px solid #ABABAB;color:#000;"> 
+    <div class="cart-wrapper"> 
+     </div> 
+     共<span class="order-quantity">18</span>件
+     <b>合计</b>:<span class="prod-cost" style="color:#3199e8">232.20</span> 
+     <button class="button-select pure-button" ng-click="selecDone()">确认订单</button>
+ </footer>

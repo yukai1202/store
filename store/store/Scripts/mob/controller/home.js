@@ -3,8 +3,15 @@
 angular.module('storeApp').controller('homeCtrl', ['$scope', '$location', '$timeout', 'storeService', 'getHomeData', 'CacheData',
 	function ($scope, $location, $timeout, storeService, getHomeData, CacheData) {
 
+
+	    $scope.pageIndex = 0;
+	    $scope.pageSize = 15;
+
 	    var cart = new ShoppingCart();
 	    var data = getHomeData.getData();
+
+	    data.categories.unshift({categoryId: 0, categoryName: "全部", remark: "Test"});
+
 	    $scope.categories = data.categories;
 
 	    $scope.menuScroll = Object.create(null);
@@ -15,7 +22,7 @@ angular.module('storeApp').controller('homeCtrl', ['$scope', '$location', '$time
 	        $scope.selectedIndex = index;
 	    };
 
-	    $scope.selecDone = function () {
+	    $scope.selectDone = function () {
 	        //alert("selected done");
 	        localStorage.setItem("order_list", JSON.stringify(cart));
 	        CacheData.setProducts(cart);

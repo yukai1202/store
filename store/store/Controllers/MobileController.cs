@@ -15,6 +15,7 @@ namespace store.Controllers
         log4net.ILog log = log4net.LogManager.GetLogger(typeof(MobileController));
 
         private UnitOfWork unitOfWork = new UnitOfWork();
+        private int defaultPageSize = 20;
         //
         // GET: /Mobile/
         public ActionResult Index()
@@ -23,7 +24,7 @@ namespace store.Controllers
         }
 
 
-        public JsonResult GetHomeData()
+        public JsonResult GetHomeData(int? categoryId, int pageIndex, int? pageSize)
         {
             List<CategoryDTO> categories = null;
             var categoryFromCache = CacheHelper.GetCacheList<IEnumerable<Category>>(Constant.CATEGORY_CACHE);
@@ -39,8 +40,31 @@ namespace store.Controllers
                 categories = result;
             }
 
-            List<ProductDTO> list = unitOfWork.CategoryRepository.GetAllProduct().ToList();
+            IEnumerable<Product> products;
+            int ps = pageSize.HasValue ? pageSize.Value : defaultPageSize;
+            if (categoryId.HasValue && categoryId.Value > 0)
+            {
+                products = unitOfWork.ProductRepository.Get(s => s.categoryId.Equals(categoryId.Value)).Skip((pageIndex - 1) * ps).Take(ps);
+            }
+            else
+            {
+                products = unitOfWork.ProductRepository.Get().Skip((pageIndex - 1) * ps).Take(ps);
+            }
 
+            List<ProductDTO> list = new List<ProductDTO>();
+            foreach (var p in products)
+            {
+                var _p = new ProductDTO();
+                _p.productUID = p.productUID;
+                _p.productName = p.productName;
+                _p.total = p.total;
+                _p.categoryId = p.categoryId;
+                _p.DateCreated = p.DateCreated;
+                _p.description = p.description;
+                _p.price = p.price;
+
+                list.Add(_p);
+            }
             
 
             //HomeData data = new HomeData();
@@ -48,10 +72,10 @@ namespace store.Controllers
             //data.products = list;
 
            // string Str = JsonConvert.SerializeObject(list);
-            return Json(new { categories = categories, products = list, test = "\u5EB7\u5E08\u5085\u77FF\u6CC9\u6C34" }, "application/json", JsonRequestBehavior.AllowGet);
+            return Json(new { categories = categories, products = list}, "application/json", JsonRequestBehavior.AllowGet);
         }
 
-
+        //public JsonResult GetProductsByCategoryByPage()
 
         //
         // GET: /Mobile/Details/5

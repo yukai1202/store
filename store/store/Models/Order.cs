@@ -18,6 +18,7 @@ namespace store.Models
         public Order()
         {
             this.orderUID = System.Guid.NewGuid().ToString("N");
+            this.Status = (int)OrderEnum.Prepare;
         }
 
         public string orderUID { get; set; }
@@ -28,5 +29,7 @@ namespace store.Models
 
         [DisplayName("备注")]
         public string remark { get; set; }
+
+        public int Status { get; set; }
     }
 }

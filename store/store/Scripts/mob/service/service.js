@@ -4,10 +4,19 @@ angular.module('storeApp').factory('storeService', ['$timeout', '$q', '$resource
 	function ($timeout, $q, $resource) {
 	    var baseUrl = "/mobile/";
 	    return {
-	        getHomeData: function () {
-	            var url = baseUrl + "gethomedata";
+	        getHomeData: function (pageIndex, pageSize, categoryId) {
+	            //int pageIndex, int pageSize, int? categoryId
+	            var url = baseUrl + "gethomedata/:categoryId/:pageIndex/:pageSize";
 	            var delay = $q.defer();
-	            $resource(url, {}).get({}, function (res) {
+	            $resource(url, {
+	                pageIndex: '@pageIndex',
+	                pageSize: '@pageSize',
+	                categoryId: '@categoryId'
+	            }).get({
+	                pageIndex: 1,
+	                pageSize: 15,
+	                categoryId: 0
+	            }, function (res) {
 	                delay.resolve(res);
 	            }, function (res) {
 	                delay.reject(res);
